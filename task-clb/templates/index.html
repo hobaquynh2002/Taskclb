@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <style>
+          body {
+    background-color: #f9f9f9;
+    color: #444;
+    font-family: sans-serif;
+}
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+form input[type="text"], form input[type="password"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+form input[type="submit"] {
+    background-color: #275ED4;
+    color: #FFF;
+    padding: 8px 15px;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+form .msg {
+    font-size: 0.8em;
+    color: #B22222;
+}
+a {
+    color: #1ABC9C;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+      <h1>Login</h1>
+            <form action="{{ url_for('login') }}" method="post">
+                  <input type="text" name="username" placeholder="Username"><br/>
+                <input type="password" name="password" placeholder="Password"><br/>
+        <input type="submit" value="Submit">
+            </form> 
+            <div class="msg">{{ msg }}</div>
+            <button><a href="{{ url_for('register') }}">Register here</a></button>
+    </div>
+    </body>
+</html> 

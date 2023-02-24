@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <style>
+      body { 
+          font-family: sans-serif;
+          color: #585858;
+        }
+      form { 
+        display: flex; 
+        flex-direction: column;
+        width: 300px;
+        margin: 0 auto;
+      }
+      .container { 
+        width: 500px; 
+        margin: 0 auto;
+      }
+      form > input { 
+        padding: 10px; 
+        border: 1px solid #ccc; 
+        margin: 5px 0; 
+        width: 100%;
+      }
+      input {
+        border-radius: 4px;
+        padding: 10px;
+        width: 100%;
+        font-size: 1.3em;
+        border: #777 solid 1px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .msg {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+        text-align: center;
+      }
+      .button{
+        text-align: center;
+      }
+      button{
+        outline: none;
+        border: none;
+      }
+      .submit{
+        width: 322px;
+      }
+      .msg2 {
+        display: flex;
+        text-align: center;
+      }
+      .msg2 p{
+        margin-right: 10px;
+      }
+      .msg2 a{
+        padding: 14px;
+        text-decoration: none;
+      }
+      .msg2 a:hover{
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <div style="margin: 0 auto" class="container">
+      <form action="{{ url_for('register') }}" method="post" enctype="multipart/form-data">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="email" name="email" placeholder="Email">
+        <input type="submit"class="submit" value="Submit">
+        <div class="msg2">
+          <p>Ban chua co tai khoan?</p>
+          <a href="{{ url_for('login') }}">Login</a>
+        </div>
+      </form>
+    </div>
+    <br/>
+    <div class="msg">{{ msg }}</div>
+  </body>
+</html>
+
